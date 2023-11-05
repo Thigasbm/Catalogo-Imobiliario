@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body{
+            background-image: url('imagens/bg2.jpg') !important;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <link rel="icon" href="imagens/If.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
+</head>
+
+<body>
+    <center>
+        <div class="login-container">
+            <!--    <a href="login 1.0 .html" class="retornar" >
+                    <img class="x" src="x.png"> -->
+
+            <a class=" ax" href="index.html"><button type="button" class="btn-close x" aria-label="Close"></button>
+            </a>
+
+            <h2 style="color: #333333">Cadastro de usuário</h2>
+
+            <form class="login-form" id="cadastro-form" method="post">
+                <input type="text" name="nome" id="nome" required="required" placeholder="Nome"></input>
+
+                <input type="text" name="sobrenome" id="sobrenome" required="required" placeholder="Sobrenome"></input>
+
+                <input type="email" name="email" id="email" required="required" placeholder="email"></input>
+
+                <input type="password" name="senha" id='senha' required="required" placeholder="Senha"></input>
+
+                <input type="password" name="confirmar_senha" id="confirmar_senha" required="required"
+                    placeholder="Confirme a sua senha"></input>
+
+                <input type="text" oninput="mascara(this)" name="cpf" id='cpf' required="required" placeholder="CPF"></input>
+
+                <input type="text" name="rg" id="rg" required="required" placeholder="RG" maxlength="8"></input>
+
+                <input type="date" name="data_nasc" id="data_nasc" required="required" placeholder="Data de nascimento"
+                    style="color: #757575"></input>
+
+                <input type="text" oninput="mascara2(this)" name="telefone" id="telefone" required="required" placeholder="Telefone"></input>
+
+                <input type="number" name="cep" id="cep" required="required" placeholder="CEP"></input>
+
+                <select name="uf_estado" id="uf_estado" required="required" style="color: #757575">
+                    <option value="selected" selected>Selecione o estado...</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+
+                <select name="cidade" id="cidade" required="required" style="color: #757575">
+                    <option value="selected" selected>Selecione a sua cidade...</option>
+                </select>
+
+                <script>
+                    const ufEstado = document.getElementById('uf_estado');
+                    const idCidade = document.getElementById('cidade');
+
+                    ufEstado.addEventListener('change', () => {
+                        const selectedUf = ufEstado.value;
+
+                        if (selectedUf !== 'selected') {
+
+                            // Faz a solicitação AJAX para obter as cidades
+                            fetch(`php/consulta.php?uf_estado=${selectedUf}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    idCidade.innerHTML = '<option value="selected" selected>Selecione a sua cidade...</option>';
+                                    data.forEach(cidades => {
+                                        const option = document.createElement('option');
+                                        option.value = cidades.id;
+                                        option.textContent = cidades.nome;
+                                        idCidade.appendChild(option);
+                                    });
+                                })
+                                .catch(error => console.error('Erro na solicitação:', error));
+                        } else {
+                            idCidade.innerHTML = '<option value="selected" selected>Selecione a sua cidade...</option>';
+                        }
+                    });
+                </script>
+
+                <div class="radio-group">
+
+                    <input class="check" type="radio" name="tipo" id="Vendedor" value="Vendedor" required="required">
+                    <label for="Vendedor">Vendedor</label>
+
+                    <input class="check" type="radio" name="tipo" id="Comprador" value="Comprador" required="required">
+                    <label for="Comprador">Comprador</label>
+
+                    <input class="check" type="radio" name="tipo" id="Ambos" value="Ambos" required="required">
+                    <label for="Ambos">Ambos</label>
+
+                </div>
+
+                <button type="submit" id="enviaform">Cadastre-se</button>
+        </div>
+        </form>
+    </center>
+</body>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const inputElement = document.getElementById('cep');
+
+    inputElement.addEventListener('input', function () {
+        const value = inputElement.value;
+        const maxDigits = 8; 
+
+        if (value.length > maxDigits) {
+            inputElement.value = value.slice(0, maxDigits); // Limita o número de dígitos
+        }
+    });
+});
+
+
+    function mascara(i) {//mascara do cpf
+
+        var v = i.value;
+
+        if (isNaN(v[v.length - 1])) { // impede entrar outro caractere que não seja número
+            i.value = v.substring(0, v.length - 1);
+            return;
+        }
+
+        i.setAttribute("maxlength", "14");
+        if (v.length == 3 || v.length == 7) i.value += ".";
+        if (v.length == 11) i.value += "-";
+
+    }
+
+    function mascara2(i) { // mascara do telefone
+
+var v = i.value;
+
+if (isNaN(v[v.length - 1])) { // impede entrar outro caractere que não seja número
+    i.value = v.substring(0, v.length - 1);
+    return;
+}
+
+i.setAttribute("maxlength", "13");
+if (v.length === 1) {
+        i.value = "(" + i.value;
+    }
+    if (v.length === 3) {
+        i.value += ")";
+    }
+    if (v.length === 8) {
+        i.value += "-";
+    }
+}
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('cadastro-form');
+        const senhaInput = document.getElementById('senha');
+        const confirmarSenhaInput = document.getElementById('confirmar_senha');
+        const cpf = document.getElementById('cpf').value;
+        const rg = document.getElementById('rg').value;
+        const telefone = document.getElementById('telefone').value;
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const cpf = document.getElementById('cpf').value.replace(/[^\d]/g, '');
+            const rg = document.getElementById('rg').value.replace(/[^\d]/g, '');
+            const telefone = document.getElementById('telefone').value.replace(/[^\d]/g, '');
+
+            if (senhaInput.value !== confirmarSenhaInput.value) {
+                alert('As senhas não condizem');
+                return;
+            }
+
+            if (cpf.length !== 11) {
+                alert('cpf inválido');
+                return;
+            }
+            if (rg.length < 8) {
+                alert('rg inválido');
+                return;
+            }
+           /* if (telefone.length < 11) {
+                alert('telefone inválido');
+                return;
+            }*/
+
+            const formData = new FormData(form);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            try {
+                const response = await fetch('http://localhost:8080/usuarios', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formObject),
+                });
+
+                if (response.ok) {
+
+                    console.log('Cadastro bem-sucedido');
+                } else {
+                    console.error('Erro ao cadastrar:', response.status);
+                }
+            } catch (error) {
+                console.error(error);
+
+            }
+        });
+    });
+
+</script>
+
+</html>

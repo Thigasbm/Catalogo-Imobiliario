@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body{
+            background-image: url('imagens/bg2.jpg') !important;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="imagens/If.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+
+<body>
+    <center>
+        <div class="login-container">
+            <p>
+        <div>
+            <a class=" ax" href="index.html"><button type="button" class="btn-close x" aria-label="Close"></button>
+            </a>
+            </div>
+
+            <h2 style="color: #333333">Efetue seu Login</h2>
+            <form class="login-form" id="login-form">
+
+
+
+                <input type="email" name="email" id="email" required="required" placeholder="email"></input>
+
+                <input type="password" name="senha" id='senha' required="required" placeholder="Senha"></input>
+
+
+
+                <button type="submit" id="login-button">Avançar</button><br>
+                <a href="esqueciSenha.html" id="esquecisenha"> Esqueceu a Senha?</a>
+                <p>Não tem uma conta? <a href="telaCadastro.html" id="cadastro-link">Cadastre-se aqui</a></p>
+            </form>
+
+    </center>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const emailInput = document.getElementById('email');
+        const senhaInput = document.getElementById('senha');
+        const loginForm = document.getElementById('login-form');
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = emailInput.value;
+            const senha = senhaInput.value;
+
+
+            const data = {
+                email: email,
+                senha: senha
+            };
+
+            fetch('http://localhost:8080/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const token = data.token;
+                window.location.href = 'index.html';
+                console.log('funcionou')
+            })
+            .catch(error => {
+                console.error('Erro ao fazer login:', error);
+
+            });
+        });
+    });
+</script>
+
+</html>

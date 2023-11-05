@@ -1,0 +1,403 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro de Imóvel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-image: url('imagens/bg2.jpg') !important;
+        }
+
+        .medida {
+            width: 100px !important;
+            height: 40px !important;
+            margin-left: 190px !important;
+
+        }
+
+        .quantidade {
+            width: 80px;
+            margin-left: 270px;
+        }
+
+        .comodolbl {
+            margin-left: -40px;
+        }
+
+        .comodo {
+            width: 300px !important;
+            margin-left: 2px !important;
+        }
+
+        .container_img {
+
+            float: right !important;
+        }
+
+        .coitainer_comodo {
+
+            float: left !important;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="css/cadastroImoveis.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <a class="ax" href="outro_arquivo.html">
+            <button type="button" class="close x" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </a>
+        <h2>Cadastro de Imóvel</h2>
+
+        <!-- LINHA 1: inputs {modelo e preço} -->
+        <center>
+            <form id="cad_imovel" method="post" enctype="multipart/form-data" action="/imovel">
+                <div class="form-group row ">
+                    <label for="preco" class="col-sm-1 preco ">Preço:</label>
+                    <div class="col-sm-2 ">
+                        <input type="text" class="form-control " style="text-align: right;" id="valor" name="valor"
+                            required="required">
+                    </div>
+
+                    <label for="modelo" class="col-sm-1. modelo ">Espécie:</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" id="modelo" name="modelo" required="required">
+                            <option>Selecione...</option>
+                            <option value="casa">Casa</option>
+                            <option value="apartamento">Apartamento</option>
+                            <option value="terreno">Terreno</option>
+                            <option value="terreno_casa">Terreno com Casa</option>
+                            <option value="sitio">Sítio</option>
+                            <option value="sala_comerceial">Sala comercial</option>
+                            <option value="barracao">Barracão</option>
+                            <option value="kitnet">Kitnet</option>
+                        </select>
+                    </div>
+
+                    <label for="localidade" class="col-sm-1. localidade">Localidade:</label>
+                    <div class="col-sm-2">
+                        <select class="form-control localidade1" id="localidade" name="localidade" required="required">
+                            <option>Selecione...</option>
+                            <option value="Rural">Rural</option>
+                            <option value="Urbano">Urbano</option>
+                        </select>
+
+
+                    </div>
+                    <div class="col-md-1">
+                        <label for="tipo_venda"> Venda</label>
+                        <input type="radio" class="form-control" id="tipo_venda" name="tipo_operacao"
+                            style="height:25px;width:50px;" required="required">
+                    </div>
+                    <div
+                        style="border-right:0px;border-top:0px;border-bottom:0px;border-left:3px;border-style:solid;border-color:rgba(81,80,80,0.692);height:60px;">
+                    </div>
+                    <div class=" col-sm-1">
+                        <label for="tipo_locacao"> Locação</label>
+                        <input type="radio" class="form-control" style=" height:25px;width:50px;" id="wtipo_locacao"
+                            name="tipo_operacao" required="required">
+                    </div>
+                </div>
+        </center>
+
+        <!-- LINHA 2: inputs {bairro e rua} -->
+        <div class="form-group bairro-rua">
+            <div class="form-group col-md-6">
+                <label for="bairro">Bairro:</label>
+                <input type="text" class="form-control" id="bairro" name="bairro" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="rua">Rua:</label>
+                <input type="text" class="form-control" id="rua" name="rua" required="required">
+            </div>
+        </div>
+
+        <!-- LINHA 3: inputs {cep, estado, cidade e numero} -->
+        <div class="form-group cep-estado-cidade-numero">
+            <div class="form-group col-md-3">
+                <label for="cep">CEP:</label>
+                <input type="number" class="form-control" id="cep" name="cep" required="required" pattern="\d{8}">
+
+            </div>
+            <div class="form-group col-md-3">
+                <label for="estado">Estado:</label>
+                <select class="form-control" name="uf_estado" id="uf_estado" required="required" style="color: #757575">
+                    <option value="selected" selected>Selecione o estado...</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="cidade">Cidade:</label>
+                <select class="form-control" name="cidade" id="cidade" required="required" style="color: #757575">
+                    <option value="selected" selected>Selecione a sua cidade...</option>
+                </select>
+
+                <script>
+                    const ufEstado = document.getElementById('uf_estado');
+                    const idCidade = document.getElementById('cidade');
+
+                    ufEstado.addEventListener('change', () => {
+                        const selectedUf = ufEstado.value;
+
+                        if (selectedUf !== 'selected') {
+
+                            // Faz a solicitação AJAX para obter as cidades
+                            fetch(`php/consulta.php?uf_estado=${selectedUf}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    idCidade.innerHTML = '<option value="selected" selected>Selecione a sua cidade...</option>';
+                                    data.forEach(cidades => {
+                                        const option = document.createElement('option');
+                                        option.value = cidades.id;
+                                        option.textContent = cidades.nome;
+                                        idCidade.appendChild(option);
+                                    });
+                                })
+                                .catch(error => console.error('Erro na solicitação:', error));
+                        } else {
+                            idCidade.innerHTML = '<option value="selected" selected>Selecione a sua cidade...</option>';
+                        }
+                    });
+                </script>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="numero">Número:</label>
+                <input type="number" class="form-control" id="numero" name="numero" required="required">
+            </div>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="complemento">Complemento do Endereço:</label>
+            <input type="text" class="form-control" id="complemento" name="complemento">
+        </div>
+        <br>
+
+        <!-- Linha 5: Área do terreno e Área construída -->
+        <div class="form-group row">
+            <div class="col-md-3 terrenominpt">
+                <label for="area-terreno">Terreno (m²):</label>
+                <input type="text" class="form-control" id="tamanho_terreno" style="text-align: right;"
+                    name="tamanho_terreno" required="required" oninput="formatarNumero(this)" />
+                <p class="pm2"> M²</p>
+            </div>
+            <div class="col-md-3 moradiaminpt">
+                <label for="area-construida">Moradia (m²):</label>
+                <input type="text" class="form-control" style="text-align: right;" id="tamanho_moradia"
+                    name="tamanho_moradia" required="required" oninput="formatarNumero(this)" />
+                <p class="pm2"> M²</p>
+            </div>
+        </div>
+
+        <script>
+            function formatarNumero(input) {
+                // Remove todos os pontos e vírgulas da entrada
+                const numero = input.value.replace(/[^0-9]/g, '');
+
+                // Formata o número com milhares separados por ponto
+                const numeroFormatado = Number(numero).toLocaleString('pt-BR');
+
+                // Define o valor do input como o número formatado
+                input.value = numeroFormatado;
+            }
+        </script>
+
+        <!-- LINHA 6 : informações complementares  -->
+        <div class="form-group">
+            <label for="informacoes_complementares">Informações Complementares:</label>
+            <textarea class="form-control" style="max-height: 70px; min-height: 70px;" id="info_complementares"
+                name="info_complementares" placeholder="Descreva o seu imóvel" rows="3"></textarea>
+        </div>
+        <br>
+
+
+        <!--LINHA 7-->
+        <!-- Botão "Adicionar imagens" -->
+        <button type="button" class="btn btn-primary addimg" onclick="addImageInput()">Adicionar imagem</button>
+
+        <!-- Botão "Adicionar Comodo e Quantidade" -->
+        <button type="button" class="btn btn-primary addimg2" onclick="addComodoAndQuantidadeRow()">Adicionar
+            Cômodos</button>
+
+        <div class="form-group row container_geral" id="imageAndComodoRows">
+            <!-- LINHA 7: IMAGENS -->
+            <div class="form-group col-md-6 imgdiv" id="imageRows">
+            </div>
+
+            <!-- LINHA 7: COMODO E QUANTIDADE -->
+            <div class="form-group col-md-6" id="comodoAndQuantidadeRows">
+            </div>
+        </div>
+
+
+        <!--Scripts abaixo!-->
+        <script>
+
+
+            function deleteImageDiv(button) {
+                const parentDiv = button.parentElement;
+                const imageRows = document.getElementById("imageRows");
+                imageRows.removeChild(parentDiv);
+            }
+
+            function deleteComodoDiv(button) {
+                const parentDiv = button.parentElement.parentElement;
+                const comodoAndQuantidadeRows = document.getElementById("comodoAndQuantidadeRows");
+                comodoAndQuantidadeRows.removeChild(parentDiv);
+            }
+
+
+
+
+
+            // Função para formatar o input do preço em moeda R$
+            function formatCurrency(input) {
+                // Remove todos os caracteres não numéricos do valor de entrada
+                if (!input.value) {
+                    return
+                }
+
+
+                var value = input.value.replace(/\D/g, '');
+
+
+                // Formate o valor como uma moeda com R$ e duas casas decimais
+
+                var formattedValue = (parseFloat(value) / 100).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                });
+
+                // Atualize o valor no input
+                input.value = formattedValue; ''
+            }
+
+            // Adicione um evento de input ao input do preço para formatar continuamente o valor
+            var precoInput = document.getElementById('valor');
+            precoInput.addEventListener('input', function () {
+                formatCurrency(precoInput);
+            });
+
+        </script>
+
+        <br><!-- BOTÃO PARA SALVAR!-->
+        <center>
+            <button type="submit" class="btn btn-success">Cadastrar Imóvel</button>
+        </center>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function addImageInput() {
+            const imageRows = document.getElementById("imageRows");
+            const newRow = document.createElement("div");
+            newRow.className = "input-group mb-3 col-md-11 coitainer_img";
+            //Input das imagens na linha 410:
+            newRow.innerHTML = `
+    <input type="file" class="form-control imgipt" id="imagens" name="imagens" size="400" required="required">
+        <button class="btn btn-danger btn_x" style="margin-top:10px;" onclick="deleteImageDiv(this)">X</button>
+    `;
+            imageRows.appendChild(newRow);
+        }
+
+        function addComodoAndQuantidadeRow() {
+            const comodoAndQuantidadeRows = document.getElementById("comodoAndQuantidadeRows");
+            const newRow = document.createElement("div");
+            newRow.className = "form-group row coitainer_comodo";
+            //input de comodos e quantidade  nas linhas 424 e 428:
+            newRow.innerHTML = `
+        <div class="form-group col-md-1" style="display: flex; align-items: center;">
+        
+            <input type="text" class="form-control comodo" id="comodo-nome" name="comodo-nome" Placeholder="Nome" required="required">
+            </div>
+
+            <div class="form-group col-md-1" style="display: flex; align-items: center;">
+                <input type="text" class="form-control medida" id="medida" style="text-align: right;" name="medida" placeholder="m2" required="required" oninput="formatarNumero(this)">
+
+            </div>
+            
+        <div class="form-group col-md-1"  style="display: flex; align-items: center;">
+            <input type="number" class="form-control quantidade" id="comodo-quantidade"name="comodo-quantidade" placeholder="Qtd" required="required">
+            <button class="btn btn-danger btn_x" onclick="deleteComodoDiv(this)">X</button>
+        </div>
+    `;
+            comodoAndQuantidadeRows.appendChild(newRow);
+        }
+    </script>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const inputElement = document.getElementById('cep');
+
+            inputElement.addEventListener('input', function () {
+                const value = inputElement.value;
+                const maxDigits = 8;
+
+                if (value.length > maxDigits) {
+                    inputElement.value = value.slice(0, maxDigits); // Limita o número de dígitos
+                }
+            });
+        });
+
+        const form = document.getElementById('cad_imovel');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            async function fetchData() {
+                try {
+                    const response = await fetch('http://localhost:8080/imovel');
+                    const data = await response.json();
+                    console.log(data);
+                } catch (error) {
+                    console.error('Erro ao buscar dados:', error);
+                }
+            }
+
+            fetchData();
+        });
+    </script>
+
+</body>
+
+</html>

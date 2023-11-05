@@ -1,0 +1,260 @@
+body {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: url('imagens/bg2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: auto;
+}
+
+.button:focus {
+    outline: none !important;
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fundo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    /* Cantos arredondados */
+    position: relative;
+    /* Para posicionar o icone 'x' */
+
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    /* Margem inferior para o titulo */
+}
+
+.form-group {
+    margin-bottom: 5px;
+    /* Espaçamento reduzido entre campos do formulario */
+}
+
+/* Ajuste de espaçamento para o botão de envio */
+
+button.btn-primary {
+    margin-top: 10px;
+    /* Espaçamento acima do botão */
+
+}
+
+/* Ajuste para o icone "x" no canto direito da div */
+.close.x {
+    font-size: 40px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close.x:hover {
+    color: #555;
+}
+
+/* Ajuste para campos Preço e CEP ficarem na mesma linha */
+.preco-cep {
+    display: flex;
+    justify-content: end;
+}
+
+.preco-cep .form-group {
+    flex: 0;
+
+}
+
+/* Ajuste para campos Bairro e Rua ficarem na mesma linha */
+.bairro-rua {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bairro-rua .form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Ajuste para campos Cep, Estado, Cidade e Numero na mesma linha */
+.cep-estado-cidade-numero {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cep-estado-cidade-numero .form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+button.btn-success {
+    width: 500px;
+}
+
+label {
+    font-size: 20px;
+
+}
+
+.preco {
+    margin-right: -20px !important;
+}
+
+.localidade {
+
+    margin-left: 5px !important;
+}
+
+.localidade1 {
+    margin-left: 10px !important;
+}
+
+
+.addimg {
+    background-color: #A9A9A9;
+    border-radius: 10px;
+    border-color: black;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+
+.addimg2 {
+    background-color: #A9A9A9;
+    border-radius: 10px;
+    border-color: black;
+    width: 200px;
+    margin-left: 400px;
+    margin-bottom: 20px;
+
+}
+
+.addimg2:hover,
+.addimg:hover {
+    background-color: #8b8b8b;
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+}
+
+
+
+.quantidade {
+    width: 80px;
+    margin-left: 270px;
+}
+
+.comodolbl {
+    margin-left: -40px;
+}
+
+.comodo {
+    width: 300px !important;
+    margin-left: 2px !important;
+}
+
+.container_img {
+
+    float: right;
+}
+
+.coitainer_comodo {
+
+    float: left;
+}
+
+.btn-success{
+    background-color: #32CD32;
+    background-color: #32CD32;
+    border: 4px;
+}
+
+.btn_x {
+    height: 40px !important;
+}
+
+.container_geral {
+    border: 2px;
+    border-color: #333;
+    border-style: solid;
+    width: auto;
+    height: 200px;
+    overflow: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.imgdiv {
+    border: 2px;
+    border-bottom: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-color: #333;
+    border-style: solid;
+
+}
+
+/* Improved styling for the image and comodo and quantidade rows */
+.form-group.row {
+    margin-bottom: 0;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+    /* Reduce the spacing here */
+}
+
+.input-group .form-control {
+    flex: 100px;
+    margin-right: 0px;
+    /* Reduce the margin-right to bring them closer */
+}
+
+.coitainer_img{
+    margin-top: 0px;
+
+}
+
+.coitainer_comodo{
+    margin-top: 10px;
+}
+
+.imgipt{
+   padding: 3px 10px 30px 10px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.moradiaminpt{
+    margin-left: 40px;
+}
+.terrenominpt{
+    margin-right: 40px;
+
+}
+
+.pm2{
+    display: inline;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    padding: 8px;
+    background-color: rgb(233, 233, 233);
+    position: absolute;
+    margin-left: 249px;
+    margin-top: -41px ;
+}
+
+.medida{
+     width: 100px !important; 
+    height: 40px !important;
+    margin-left: 190px !important;
+
+}

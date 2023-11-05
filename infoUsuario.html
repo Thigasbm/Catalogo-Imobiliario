@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="imagens/If.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/infousuario.css">
+               
+        
+    </head>
+    <body>
+        <center>
+            <div class="login-container">
+            <!--    <a href="login 1.0 .html" class="retornar" >
+                    <img class="x" src="x.png"> -->
+
+                    <a class="ax" href="index.html"><button type="button" class="btn-close x" aria-label="Close"></button>
+                    </a>
+                
+                <h2>Informações do usuário</h2>
+                
+                <form class="login-form">
+                    <input type="text" name="nome" id="nome" required="required" placeholder="Nome"></input>
+                    
+                    <input type="text" name="sobrenome" id="sobrenome" required="required" placeholder="Sobrenome"></input>
+                    
+                    <input type="email" name="email" id="email" required="required" placeholder="email"></input>
+                    
+                    <input type="password" name="senha" id= 'senha' required="required" placeholder="Senha"></input>
+                    
+                <input type="password" name="confirmar_password" id="confirmar_password" required="required" placeholder="Confirme a sua senha"></input>
+                
+                <input type="text" name="cpf" id='cpf' required="required" placeholder="CPF"></input>
+
+                <input type="text" name="rg" id="rg" required="required" placeholder="RG"></input>
+                
+                <input type="date" name="nascimento" id="narscimento" required="required" placeholder="Data de nascimento"></input>
+                
+                <input type="number" name="telfone" id="telfone" required="required" placeholder="Telefone"></input>
+                
+                <input type="number" name="cep" id="cep" required="required" placeholder="CEP"></input>
+                
+                <select nome="estado" id="estado" required="required">
+                    <option value="selected" selected>Selecione o seu estado...</option>
+                    <option value="SP">SP</option>
+                    <option value="SC">SC</option>
+                </select>
+                
+                <select nome="cidade" id="cidade" required="required">
+                    
+                    <option value="selected" selected>Selecione a sua cidade...</option>
+                    <option value="Concordia">Concordia</option>
+                    <option value="Teste">Teste</option>
+                </select>
+                <br>
+                
+                <div class="radio-group">
+                    <input class="check" type="radio" name="tipo_usuario" value="Vendedor" required="required">
+                    <label for="Vendedor">Vendedor</label>
+                    
+                    <input class="check" type="radio" name="tipo_usuario" value="Comprador" required="required">
+                    <label for="Comprador">Comprador</label>
+                    
+                    <input class="check" type="radio" name="tipo_usuario" value="Ambos" required="required">
+                    <label for="Ambos">Ambos</label>
+                </div>
+                <button type="submit">Atualizar</button>
+            </div >
+            </form>
+    </center>
+    </body>
+    </html>

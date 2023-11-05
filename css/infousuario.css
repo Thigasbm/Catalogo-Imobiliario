@@ -1,0 +1,98 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../imagens/home-1438305_1280.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        .login-container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #333;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form label {
+            color: #333;
+        }
+
+        .login-form input,
+        .login-form select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 5px 0;
+            width: 100%;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .check {
+            width: 100px;
+            height: 25px;
+        }
+
+        .radio-group label {
+            margin-right: 15px;
+            color: #333;
+        }
+
+        .login-form button {
+            background-color: #32CD32;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-form button:hover {
+            background-color: #45a049;
+        }
+
+        .login-form p {
+            color: #888;
+            margin-top: 15px;
+        }
+
+        .login-form p a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .x {
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+
+        }
+
+        .x:hover {
+            color: #555;
+        }

@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <style>
+        body{
+            background-image: url('imagens/bg1.jpg') !important;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <link rel="icon" href="imagens/If.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Imóvel Fácil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <center>
+
+        <!-- Carrosel -->
+
+        <div id="carouselExampleIndicators" class="carousel slide">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!--img-fluid-->
+                    <img src="imagens/Anuncie__Alugue__Compre_(1).png" class="d-block w-100" alt="1">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/Anuncie__Alugue__Compre.png" class="d-block w-100" alt="2">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/Imagem_3.png" class="d-block w-100" alt="3">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+
+
+        <!--header-->
+
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Imóvel Fácil</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!--<div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Filtros
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="dropdown" id="localizacao-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Localização
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">cidade</a></li>-->
+                <!--adicionar cidades / pegar por estado-->
+                <!--</ul>
+                                </li>
+
+                                <li class="dropdown" id="especie-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Espécie
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Apartamento</a></li>
+                                        <li><a class="dropdown-item" href="#">Casa</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown" id="tipo_operacao-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Contrato
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Compra</a></li>
+                                        <li><a class="dropdown-item" href="#">Aluguel</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown" id="zona-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Zona
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Urbana</a></li>
+                                        <li><a class="dropdown-item" href="#">Rural</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown" id="tamanho_terreno-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Área do terreno
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Abaixo de 100m²</a></li>
+                                        <li><a class="dropdown-item" href="#">100m² até 250m²</a></li>
+                                        <li><a class="dropdown-item" href="#">250m² até 500m²</a></li>
+                                        <li><a class="dropdown-item" href="#">500m² até 1000m²</a></li>
+                                        <li><a class="dropdown-item" href="#">1000m² até 5000m²</a></li>
+                                        <li><a class="dropdown-item" href="#">5000m² até 1 hectare</a></li>
+                                        <li><a class="dropdown-item" href="#">1 hectare até 10 hectares</a></li>-->
+                <!--definir os tamanhos (de 25m² a 45m² por exemplo)-->
+                <!--</ul>
+                                </li>
+
+                                <li class="dropdown" id="tamanho_moradia-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Área da moradia
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Abaixo de 40m²</a></li>-->
+                <!--talvez adicionar algo diferente de um href-->
+                <!--<li><a class="dropdown-item" href="#">40m² até 70m²</a></li>
+                                        <li><a class="dropdown-item" href="#">70m² até 100m²</a></li>
+                                        <li><a class="dropdown-item" href="#">Acima de 100m²</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </ul>-->
+
+
+                <ul class="navbar-nav right"> <!-- Adiciona ml-auto para posicionar à direita -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="infoUsuario.html">Informações do usuário</a>
+                      </li>
+
+                    <ul class="navbar-nav right"> <!-- Adiciona ml-auto para posicionar à direita -->
+                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastroImoveis.html">Cadastrar imóvel</a>
+                              </li>
+                        
+
+                        <!--Botões da navbar-->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="telaLogin.html">Entrar</a>
+                          </li>
+
+
+                          <li class="nav-item">
+                            <a class="nav-link" href="telaCadastro.html">Cadastre-se</a>
+                          </li>
+                    </ul>
+            </div>
+            </div>
+        </nav>
+
+    </center>
+
+    <p>
+    <p>
+    <p> <!--apagar os containers desnecessários ao implementar a api -->
+        <!--1°-->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 card al album" style="width: 18rem;">
+                <img src="imagens/flor.jpg" class="card-img-left ft" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Venda</h5> <!--nome da casa ou do proprietario. pode ser compra/aluguel-->
+                    <p class="card-text txt-album">Some quick example text to build on the card title and make up the
+                        bulk of the
+                        card's content.</p> <!-- uma descrição do produto-->
+                    <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4  card al album" style="width: 18rem;">
+                <img src="imagens/flor.jpg" class="card-img-top ft" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Aluguel</h5> <!--nome da casa ou do proprietario. pode ser compra/aluguel-->
+                    <p class="card-text txt-album">Some quick example text to build on the card title and make up the
+                        bulk of the
+                        card's content.</p> <!-- uma descrição do produto-->
+                    <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4  card al album" style="width: 18rem;">
+                <img src="imagens/flor.jpg" class="card-img-top ft" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Jonas Giron</h5>
+                    <!--nome da casa ou do proprietario. pode ser compra/aluguel-->
+                    <p class="card-text txt-album">Some quick example text to build on the card title and make up the
+                        bulk of the
+                        card's content.</p> <!-- uma descrição do produto-->
+                    <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4  card al album" style="width: 18rem;">
+                <img src="imagens/flor.jpg" class="card-img-top ft" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Geraldo Alberto Dacos...</h5>
+                    <!--nome da casa ou do proprietario. pode ser compra/aluguel-->
+                    <p class="card-text txt-album">Some quick example text to build on the card title and make up the
+                        bulk of the
+                        card's content.</p> <!-- uma descrição do produto-->
+                    <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        <!--2°-->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 card al album" style="width: 18rem;">
+                <img src="imagens/flor.jpg" class="card-img-left ft" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Aluguel</h5> <!--nome da casa ou do proprietario. pode ser compra/aluguel-->
+                    <p class="card-text txt-album">Some quick example text to build on the card title and make up the
+                        bulk of the
+                        card's content.</p> <!-- uma descrição do produto-->
+                    <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 card al album" style="width: 18rem;">
+                <img src="imagens/flor.jpg" class="card-img-top ft" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Aluguel</h5> <!--nome da casa ou do proprietario. pode ser compra/aluguel-->
+                    <p class="card-text txt-album">Some quick example text to build on the card title and make up the
+                        bulk of the
+                        card's content.</p> <!-- uma descrição do produto-->
+                    <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 card al album" style="width: 18rem;">
+                <img src="imagens/flor.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Aluguel</h5> <!--nome da casa ou do proprietario. pode ser compra/aluguel-->
+                    <p class="card-text txt-album">Some quick example text to build on the card title and make up the
+                        bulk of the
+                        card's content.</p> <!-- uma descrição do produto-->
+                    <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 card al album" style="width: 18rem;">
+                <img src="imagens/flor.jpg" class="card-img-top ft" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Aluguel</h5> <!--nome da casa ou do proprietario. pode ser compra/aluguel-->
+                    <p class="card-text txt-album">Some quick example text to build on the card title and make up the
+                        bulk of the
+                        card's content.</p> <!-- uma descrição do produto-->
+                    <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+    <p>
+    <p>
+        <center>
+            Ver mais <!--função que deixa ver mais imóveis-->
+            <p>
+            <p>
+                <a class="nav-link" aria-current="page" href="#">Voltar ao início</a>
+        </center>
+    <p>
+    <p>
+
+
+
+        <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Sobre nós</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3">Imóvel Fácil</i>
+                        </h6>
+                        <p style="text-align: justify;" s>
+                            Criado para facilitar a sua vida, a Imóvel Fácil não necessita de imobiliárias, corretores
+                            ou uma super-papelada para que você possa vender seu imóvel, com a gente tudo fica mais
+                            fácil, confortável e econômico!
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Criadores
+                        </h6>
+                        <p>
+                            <a href="#" class="text-reset">Cauã Sehn Essing</a>
+                        </p>
+                        <p>
+                            <a href="https://www.instagram.com/cleinam_r/" class="text-reset">Cleinam Rachelle</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Hindia Polliany Alves de Sousa Leite</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Osvanir Bonassi jr</a>
+                        </p>
+                        <p>
+                            <a href="https://www.instagram.com/thigas_bm/" class="text-reset">Thiago Biazus Maran</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contato</h6>
+                        <p>
+                            <i class="fas fa-envelope me-3">imovelfacilcontato@gmail.com</i>
+
+                        </p>
+                        <p><i class="fas fa-phone me-3">(49) 991935166</i></p>
+                        <p><i class="fas fa-print me-3">(49) 991335649</i></p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 Copyright:
+            <a class="text-reset fw-bold" href="...">ImovelFacil.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+</body>
+
+<script>
+    // Adicionar funcionalidade ao submenu "Localização"
+    /*document.getElementById('localizacao-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('localizacao-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "Categoria"
+    document.getElementById('especie-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('especie-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "Contrato(tipo_operacao)"
+    document.getElementById('tipo_operacao-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('tipo_operacao-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "zona"
+    document.getElementById('zona-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('zona-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "area terreno"
+    document.getElementById('tamanho_terreno-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('tamanho_terreno-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "area moradia"
+    document.getElementById('tamanho_moradia-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('tamanho_moradia-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });*/
+</script>
+
+</html>
