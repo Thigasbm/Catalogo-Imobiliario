@@ -3,12 +3,6 @@
 
 <head>
     <style>
-        #containerImoveis {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
         .card {
             position: relative;
         }
@@ -24,11 +18,6 @@
 
         body {
             background-image: url('imagens/bg1.jpg') !important;
-        }
-
-        .img-fluid {
-            max-width: 400px !important;
-            height: auto !important;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -100,12 +89,12 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <ul class="navbar-nav right">
+                <ul class="navbar-nav right"> <!-- Adiciona ml-auto para posicionar à direita -->
                     <li class="nav-item">
                         <a class="nav-link" href="infoUsuario.html">Informações do usuário</a>
                     </li>
 
-                    <ul class="navbar-nav right">
+                    <ul class="navbar-nav right"> <!-- Adiciona ml-auto para posicionar à direita -->
 
                         <!--<li class="nav-item">
                                 <a class="nav-link" href="cadastroImoveis.html">Cadastrar imóvel</a>
@@ -133,19 +122,101 @@
     <p>
     <p> <!--apagar os containers desnecessários ao implementar a api -->
 
+    <div class="container">
+        <div class="card-group">
+            <div class="card">
+                <img src="imagens/flor.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">his card has supporting text below as a natural lead-in to additional
+                        content.sfsfsfsfdsfasfsa sasdasd asdadada sasdfasf adadf asdfads fa sddsa f dfasd fasdf asdf
+                        as...</p>
+                    <a  onclick="redirecionarParaTelaDetalhes('42')"class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+                <script>
 
+function redirecionarParaTelaDetalhes(idImovel) {
+  // Construa a URL com o ID do imóvel
+  const url = `visualizarimoveis.html?id_imovel=${idImovel}`;
 
-    <div class="container" id="containerImoveis">
+  // Redirecione para a URL
+  window.location.href = url;
+}
 
-    </div>
-
-    <div class="card-footer">
-        <small class="text-body-secondary"></small>
-    </div>
-
-    </div>
-    </div>
-    </div>
+                </script>
+                <div class="card-footer">
+                    <small class="text-body-secondary"></small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/flor.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                        content.sfsfsfsfdsfasfsa sasdasd asdadada sasdfasf adadf asdfads fa sddsa f dfasd fasdf asdf
+                        as...
+                    </p>
+                    <a href="#" class="btn btn-primary btn-album ">Visualizar</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary"></small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/flor.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">his card has supporting text below as a natural lead-in to additional
+                        content.sfsfsfsfdsfasfsa sasdasd asdadada sasdfasf adadf asdfads fa sddsa f dfasd fasdf asdf
+                        as...</p>
+                    <a href="#" class="btn btn-primary btn-album ">Visualizar</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary"></small>
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="imagens/flor.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">his card has supporting text below as a natural lead-in to additional
+                            content.sfsfsfsfdsfasfsa sasdasd asdadada sasdfasf adadf asdfads fa sddsa f dfasd fasdf asdf
+                            as...</p>
+                        <a href="#" class="btn btn-primary btn-album ">Visualizar</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"></small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagens/flor.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">his card has supporting text below as a natural lead-in to additional
+                            content.sfsfsfsfdsfasfsa sasdasd asdadada sasdfasf adadf asdfads fa sddsa f dfasd fasdf asdf
+                            as...</p>
+                        <a href="#" class="btn btn-primary btn-album ">Visualizar</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"></small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagens/flor.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">his card has supporting text below as a natural lead-in to additional
+                            content.sfsfsfsfdsfasfsa sasdasd asdadada sasdfasf adadf asdfads fa sddsa f dfasd fasdf asdf
+                            as...</p>
+                        <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"></small>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <p>
     <p>
@@ -231,6 +302,9 @@
                             <a href="#!" class="text-reset">Hindia Polliany Alves de Sousa Leite</a>
                         </p>
                         <p>
+                            <a href="#!" class="text-reset">Osvanir Bonassi jr</a>
+                        </p>
+                        <p>
                             <a href="https://www.instagram.com/thigas_bm/" class="text-reset">Thiago Biazus Maran</a>
                         </p>
                     </div>
@@ -268,62 +342,5 @@
     <!-- Footer -->
 
 </body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        fetch('http://localhost:8080/imoveis')
-            .then(response => response.json())
-            .then(data => {
-                const imoveisContainer = document.getElementById('containerImoveis');
-
-                data.forEach((imovel, index) => {
-                    const card = document.createElement('div');
-                    card.classList.add('card');
-                    card.style.width = '300px'; // Defina o tamanho desejado para os cards
-                    card.style.marginBottom = '20px';
-
-                    const imagem = document.createElement('img');
-                    imagem.src = `uploads/${imovel.imagens}`;
-                    imagem.classList.add('card-img-top', 'img-fluid');
-                    imagem.alt = `Imagem do imóvel ${index + 1}`;
-                    imagem.style.objectFit = 'cover'; // Garante que a imagem se ajusta ao contêiner mantendo as proporções
-                    imagem.style.height = '150px'; // Defina a altura desejada para as imagens
-
-                    imagem.onerror = function () {
-                        console.error(`Erro ao carregar imagem para o imóvel ${index + 1}: ${imovel.imagens}`);
-                    };
-
-                    const cardBody = document.createElement('div');
-                    cardBody.classList.add('card-body');
-
-                    const titulo = document.createElement('h5');
-                    titulo.classList.add('card-title');
-                    titulo.textContent = imovel.titulo;
-
-                    const complemento = document.createElement('p');
-                    complemento.classList.add('card-text');
-                    complemento.textContent = imovel.info_complementares;
-
-                    const visualizarBtn = document.createElement('a');
-                    visualizarBtn.classList.add('btn', 'btn-primary', 'btn-album');
-                    visualizarBtn.textContent = 'Visualizar';
-
-                    visualizarBtn.href = `visualizarimoveis.html?id_imovel=${imovel.id_imovel}`;
-
-                    // Adiciona os elementos ao card
-                    cardBody.appendChild(titulo);
-                    cardBody.appendChild(complemento);
-                    cardBody.appendChild(visualizarBtn);
-
-                    card.appendChild(imagem);
-                    card.appendChild(cardBody);
-
-                    imoveisContainer.appendChild(card);
-                });
-            })
-            .catch(error => console.error('Erro ao obter dados dos imóveis:', error));
-    });
-
-</script>
 
 </html>

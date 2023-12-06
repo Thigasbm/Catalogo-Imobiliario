@@ -1,0 +1,437 @@
+INDEX:
+
+<script>
+    // Adicionar funcionalidade ao submenu "Localização"
+    /*document.getElementById('localizacao-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('localizacao-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "Categoria"
+    document.getElementById('especie-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('especie-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "Contrato(tipo_operacao)"
+    document.getElementById('tipo_operacao-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('tipo_operacao-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "zona"
+    document.getElementById('zona-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('zona-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "area terreno"
+    document.getElementById('tamanho_terreno-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('tamanho_terreno-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+
+    // Adicionar funcionalidade ao submenu "area moradia"
+    document.getElementById('tamanho_moradia-dropdown').addEventListener('mouseover', function () {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+
+    document.getElementById('tamanho_moradia-dropdown').addEventListener('mouseout', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });*/
+</script>
+
+                <!--<div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Filtros
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="dropdown" id="localizacao-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Localização
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">cidade</a></li>-->
+                <!--adicionar cidades / pegar por estado-->
+                <!--</ul>
+                                </li>
+
+                                <li class="dropdown" id="especie-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Espécie
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Apartamento</a></li>
+                                        <li><a class="dropdown-item" href="#">Casa</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown" id="tipo_operacao-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Contrato
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Compra</a></li>
+                                        <li><a class="dropdown-item" href="#">Aluguel</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown" id="zona-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Zona
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Urbana</a></li>
+                                        <li><a class="dropdown-item" href="#">Rural</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown" id="tamanho_terreno-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Área do terreno
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Abaixo de 100m²</a></li>
+                                        <li><a class="dropdown-item" href="#">100m² até 250m²</a></li>
+                                        <li><a class="dropdown-item" href="#">250m² até 500m²</a></li>
+                                        <li><a class="dropdown-item" href="#">500m² até 1000m²</a></li>
+                                        <li><a class="dropdown-item" href="#">1000m² até 5000m²</a></li>
+                                        <li><a class="dropdown-item" href="#">5000m² até 1 hectare</a></li>
+                                        <li><a class="dropdown-item" href="#">1 hectare até 10 hectares</a></li>-->
+                <!--definir os tamanhos (de 25m² a 45m² por exemplo)-->
+                <!--</ul>
+                                </li>
+
+                                <li class="dropdown" id="tamanho_moradia-dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Área da moradia
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Abaixo de 40m²</a></li>-->
+                <!--talvez adicionar algo diferente de um href-->
+                <!--<li><a class="dropdown-item" href="#">40m² até 70m²</a></li>
+                                        <li><a class="dropdown-item" href="#">70m² até 100m²</a></li>
+                                        <li><a class="dropdown-item" href="#">Acima de 100m²</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </ul>-->
+
+
+CADASTRO IMOVEIS---------------------------------------------------------------------------------------------------------
+
+
+    <script>
+        /*
+        
+                function addImageInput() {
+        
+        
+                    const imageRows = document.getElementById("imageRows");
+                    const newRow = document.createElement("div");
+                    newRow.className = "input-group mb-3 col-md-11 coitainer_img";
+        
+                    newRow.innerHTML = `
+            <input type="file" class="form-control imgipt" id="imagens" name="imagens" size="400" required="required" multiple>
+            <button class="btn btn-danger btn_x" style="margin-top:10px;" onclick="deleteImageDiv(this)">X</button>
+          `;
+        
+                    imageRows.appendChild(newRow);
+                }
+        
+                /*     function addComodoAndQuantidadeRow() {
+                         const comodoAndQuantidadeRows = document.getElementById("comodoAndQuantidadeRows");
+                         const newRow = document.createElement("div");
+                         newRow.className = "form-group row coitainer_comodo";
+                         //input de comodos e quantidade  nas linhas 424 e 428:
+                         newRow.innerHTML = `
+                     <div class="form-group col-md-1" style="display: flex; align-items: center;">
+                     
+                         <input type="text" class="form-control comodo" id="comodo-nome" name="comodo-nome" Placeholder="Nome" required="required">
+                         </div>
+             
+                         <div class="form-group col-md-1" style="display: flex; align-items: center;">
+                             <input type="text" class="form-control medida" id="medida" style="text-align: right;" name="medida" placeholder="m2" required="required">
+             
+                         </div>
+                         
+                     <div class="form-group col-md-1"  style="display: flex; align-items: center;">
+                         <input type="number" class="form-control quantidade" id="comodo-quantidade"name="comodo-quantidade" placeholder="Qtd" required="required">
+                         <button class="btn btn-danger btn_x" onclick="deleteComodoDiv(this)">X</button>
+                     </div>
+                 `;
+                         comodoAndQuantidadeRows.appendChild(newRow);
+                     }*/
+    </script>
+
+    <!--Scripts abaixo!-->
+    <script>
+
+
+        /* function deleteImageDiv(button) {
+             const parentDiv = button.parentElement;
+             const imageRows = document.getElementById("imageRows");
+             imageRows.removeChild(parentDiv);
+         }
+
+         /*  function deleteComodoDiv(button) {
+               const parentDiv = button.parentElement.parentElement;
+               const comodoAndQuantidadeRows = document.getElementById("comodoAndQuantidadeRows");
+               comodoAndQuantidadeRows.removeChild(parentDiv);
+           }
+           */
+
+
+
+
+        // Função para formatar o input do preço em moeda R$
+        /*function formatCurrency(input) {
+            // Remove todos os caracteres não numéricos do valor de entrada
+            if (!input.value) {
+                return
+            }
+
+
+            var value = input.value.replace(/\D/g, '');
+
+
+            // Formate o valor como uma moeda com R$ e duas casas decimais
+
+            var formattedValue = (parseFloat(value) / 100).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            });
+
+            // Atualize o valor no input
+            input.value = formattedValue; ''
+        }
+
+        // Adicione um evento de input ao input do preço para formatar continuamente o valor
+        var precoInput = document.getElementById('valor');
+        precoInput.addEventListener('input', function () {
+            formatCurrency(precoInput);
+        });*/
+
+    </script>
+
+        /*   .medida {
+            width: 100px !important;
+            height: 40px !important;
+            margin-left: 190px !important;
+
+        }
+
+        .quantidade {
+            width: 80px;
+            margin-left: 270px;
+        }
+
+        .comodolbl {
+            margin-left: -40px;
+        }
+
+      /*  .comodo {
+            width: 300px !important;
+            margin-left: 2px !important;
+        }*/
+
+        /*   .coitainer_comodo {
+
+            float: left !important;
+        }*/
+
+//ideia do isaque
+/*    async function salvarImovel(imovel){
+        await fetch('http://localhost:8080/imovel', {body: imovel})
+        await fecht('http://localhost:8080/uploadFt',)// dar newformdata dar append
+    }*/
+
+
+API----------------------------------------------------------------------------------------------------------------------
+
+
+/* devido ao tempo algumas tabelas e codigos foram comentados pois não serão usados, pois suas funções tomariam muito tempo e foram substituidas por formas mais simples de serem usados.
+
+
+const Especificacao = sequelize.define(
+  'especificacoes',
+  {
+    id_espec: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    id_imovel: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'imoveis',
+        key: 'id_imovel'
+      }
+    },
+    descricao: { type: DataTypes.STRING },
+    medida: { type: DataTypes.STRING },
+    quantidade: { type: DataTypes.INTEGER }
+  },
+  {
+    timestamps: false,
+    paranoid: true
+  }
+);
+
+Imovel.hasMany(Especificacao, { foreignKey: 'id_imovel' });
+Especificacao.belongsTo(Imovel, { foreignKey: 'id_imovel' });
+*/
+
+/*
+const arq_Doc = sequelize.define(
+  'arquivos_doc',
+  {
+    id_arq: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    id_doc: { type: DataTypes.STRING },
+    descricao: { type: DataTypes.STRING },
+  },
+  {
+    timestamps: false,
+    paranoid: true,
+  }
+);*/
+/*
+const doc_Ope = sequelize.define(
+  'doc_ope',
+  {
+    id_doc: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    tipo_operacao: { type: DataTypes.STRING },
+    descricao: { type: DataTypes.STRING },
+  },
+  {
+    timestamps: false,
+    paranoid: true,
+  }
+);*/
+
+
+
+INDEX--------------------------------------------------------------------------------------------------------------------
+
+
+<div class="card-group">
+            <div class="card">
+                <img src="imagens/casa1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vende-se Casa Amerela</h5>
+                    <p class="card-text"> Casa com 2 quartos, 3 banheiros, cozinha, sala de estar, piscina e área com churassqueira... </p>
+                     <a  onclick="redirecionarParaTelaDetalhes('54')"class="btn btn-primary btn-album">Visualizar</a>
+                </div>
+                <script>
+
+function redirecionarParaTelaDetalhes(idImovel) {
+  // Construa a URL com o ID do imóvel
+  const url = `visualizarimoveis.html?id_imovel=${idImovel}`;
+
+  // Redirecione para a URL
+  window.location.href = url;
+}
+
+                </script>
+                <div class="card-footer">
+                    <small class="text-body-secondary"></small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/casa2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Casa Branca</h5>
+                    <p class="card-text"> Casa com 4 quartos, 1 suíte, 3 banheiros, cozinha, sala de estar e sala de jantar... 
+                    </p>
+                    <a href="#" class="btn btn-primary btn-album ">Visualizar</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary"></small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/casa3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Casa pequena a venda</h5>
+                    <p class="card-text"> Casa com 3 quartos, 2 banheiros, cozinha, sala de estar...</p>
+                    <a href="#" class="btn btn-primary btn-album ">Visualizar</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary"></small>
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="imagens/casa4.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Casa de madeira para vender</h5>
+                        <p class="card-text"> Casa com 3 quartos, 1 banheiros, cozinha, sala de estar, localizado na cidade...</p>
+                        <a href="#" class="btn btn-primary btn-album ">Visualizar</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"></small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagens/casa5.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Casa moderna a venda</h5>
+                        <p class="card-text"> Casa com 3 quartos, 2 banheiros, cozinha, sala de estar, piscina e área com churassqueira</p>
+                        <a href="#" class="btn btn-primary btn-album ">Visualizar</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"></small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagens/casa6.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Terreno a venda</h5>
+                        <p class="card-text"> 960m²</p>
+                        <a href="#" class="btn btn-primary btn-album">Visualizar</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"></small>
+                    </div>
+                </div>
+            </div>
+        </div>

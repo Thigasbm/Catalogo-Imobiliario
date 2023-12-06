@@ -11,9 +11,35 @@
             background-image: url('imagens/bg2.jpg') !important;
         }
 
+        .medida {
+            width: 100px !important;
+            height: 40px !important;
+            margin-left: 190px !important;
+
+        }
+
+        .quantidade {
+            width: 80px;
+            margin-left: 270px;
+        }
+
+        .comodolbl {
+            margin-left: -40px;
+        }
+
+        .comodo {
+            width: 300px !important;
+            margin-left: 2px !important;
+        }
+
         .container_img {
 
             float: right !important;
+        }
+
+        .coitainer_comodo {
+
+            float: left !important;
         }
     </style>
 
@@ -32,11 +58,7 @@
 
         <!-- LINHA 1: inputs {modelo e preço} -->
         <center>
-
-
-            <form method="POST" enctype="multipart/form-data" action="">
-
-
+            <form id="cad_imovel" method="post" enctype="multipart/form-data" action="/imovel">
                 <div class="form-group row ">
                     <label for="preco" class="col-sm-1 preco ">Preço: </label>
                     <div class="col-sm-2 ">
@@ -69,17 +91,20 @@
 
 
                     </div>
-                    <label for="localidade" class="col-sm-1. localidade">Tipo:</label>
-                    <div class="col-sm-2">
-                        <select class="form-control localidade1" id="tipo_operacao" name="tipo_operacao" required="required">
-                            <option>Selecione...</option>
-                            <option value="Venda">Venda</option>
-                            <option value="Locação">Locação</option>
-                        </select>
-
-
+                        <div class="col-md-1">
+                            <label for="tipo_venda">Venda</label>
+                            <input type="radio" class="form-control" id="tipo_venda" name="tipo_operacao"
+                                style="height:25px;width:50px;" value="Venda"  required="required">
+                        </div>
+                        <div
+                            style="border-right:0px;border-top:0px;border-bottom:0px;border-left:3px;border-style:solid;border-color:rgba(81,80,80,0.692);height:60px;">
+                        </div>
+                        <div class=" col-sm-1">
+                            <label for="tipo_lcacao">Locação</label>
+                            <input type="radio" class="form-control" style=" height:25px;width:50px;" id="tipo_ocacao"
+                                name="tipo_operacao" value="Locação" required="required">
+                        </div>
                     </div>
-                </div>
         </center>
 
         <!-- LINHA 2: inputs {bairro e rua} -->
@@ -98,7 +123,7 @@
         <div class="form-group cep-estado-cidade-numero">
             <div class="form-group col-md-3">
                 <label for="cep">CEP:</label>
-                <input type="number" class="form-control" id="cep" name="cep" required="required">
+                <input type="number" class="form-control" id="cep" name="cep" required="required" pattern="\d{8}">
 
             </div>
             <div class="form-group col-md-3">
@@ -174,16 +199,6 @@
             </div>
         </div>
         <div class="form-group col-md-12">
-            <label for="complemento">Razão Social:</label>
-            <input type="text" class="form-control" id="razao" name="razao">
-        </div>
-        <br>
-        <div class="form-group col-md-12">
-            <label for="complemento">Dê um título ao seu anúncio:</label>
-            <input type="text" class="form-control" id="titulo" name="titulo">
-        </div>
-        <br>
-        <div class="form-group col-md-12">
             <label for="complemento">Complemento do Endereço:</label>
             <input type="text" class="form-control" id="complemento" name="complemento">
         </div>
@@ -212,17 +227,81 @@
         <div class="form-group">
             <label for="informacoes_complementares">Informações Complementares:</label>
             <textarea class="form-control" style="max-height: 70px; min-height: 70px;" id="info_complementares"
-                name="info_complementares"
-                placeholder="Descreva o seu imóvel, por exemplo, informe a quantidade de comodos e seus respectivos tamnhos!"
-                rows="3"></textarea>
-        </div>
-        <div class="form-group col-md-12">
-            <label for="complemento">insira fotos do seu imóvel</label>
-            <input type="file" class="form-control imgipt" id="imagens" name="imagens" size="400" required="required"
-                multiple>
+                name="info_complementares" placeholder="Descreva o seu imóvel" rows="3"></textarea>
         </div>
         <br>
 
+
+        <!--LINHA 7-->
+        <!-- Botão "Adicionar imagens" -->
+        <button type="button" class="btn btn-primary addimg" onclick="addImageInput()">Adicionar imagem</button>
+
+        <!-- Botão "Adicionar Comodo e Quantidade" -->
+        <button type="button" class="btn btn-primary addimg2" onclick="addComodoAndQuantidadeRow()">Adicionar
+            Cômodos</button>
+
+        <div class="form-group row container_geral" id="imageAndComodoRows">
+            <!-- LINHA 7: IMAGENS -->
+            <div class="form-group col-md-6 imgdiv" id="imageRows">
+            </div>
+
+            <!-- LINHA 7: COMODO E QUANTIDADE -->
+            <div class="form-group col-md-6" id="comodoAndQuantidadeRows">
+            </div>
+        </div>
+
+
+        <!--Scripts abaixo!-->
+        <script>
+
+
+            function deleteImageDiv(button) {
+                const parentDiv = button.parentElement;
+                const imageRows = document.getElementById("imageRows");
+                imageRows.removeChild(parentDiv);
+            }
+
+            function deleteComodoDiv(button) {
+                const parentDiv = button.parentElement.parentElement;
+                const comodoAndQuantidadeRows = document.getElementById("comodoAndQuantidadeRows");
+                comodoAndQuantidadeRows.removeChild(parentDiv);
+            }
+
+
+
+
+
+            // Função para formatar o input do preço em moeda R$
+            /*function formatCurrency(input) {
+                // Remove todos os caracteres não numéricos do valor de entrada
+                if (!input.value) {
+                    return
+                }
+
+
+                var value = input.value.replace(/\D/g, '');
+
+
+                // Formate o valor como uma moeda com R$ e duas casas decimais
+
+                var formattedValue = (parseFloat(value) / 100).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                });
+
+                // Atualize o valor no input
+                input.value = formattedValue; ''
+            }
+
+            // Adicione um evento de input ao input do preço para formatar continuamente o valor
+            var precoInput = document.getElementById('valor');
+            precoInput.addEventListener('input', function () {
+                formatCurrency(precoInput);
+            });*/
+
+        </script>
+
+        <br><!-- BOTÃO PARA SALVAR!-->
         <center>
             <button type="submit" class="btn btn-success">Cadastrar Imóvel</button>
         </center>
@@ -234,66 +313,100 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
 
+
+        function addImageInput() {
+
+
+            const imageRows = document.getElementById("imageRows");
+            const newRow = document.createElement("div");
+            newRow.className = "input-group mb-3 col-md-11 coitainer_img";
+
+            newRow.innerHTML = `
+    <input type="file" class="form-control imgipt" id="imagens" name="imagens" size="400" required="required">
+    <button class="btn btn-danger btn_x" style="margin-top:10px;" onclick="deleteImageDiv(this)">X</button>
+  `;
+
+            imageRows.appendChild(newRow);
+        }
+
+        function addComodoAndQuantidadeRow() {
+            const comodoAndQuantidadeRows = document.getElementById("comodoAndQuantidadeRows");
+            const newRow = document.createElement("div");
+            newRow.className = "form-group row coitainer_comodo";
+            //input de comodos e quantidade  nas linhas 424 e 428:
+            newRow.innerHTML = `
+        <div class="form-group col-md-1" style="display: flex; align-items: center;">
+        
+            <input type="text" class="form-control comodo" id="comodo-nome" name="comodo-nome" Placeholder="Nome" required="required">
+            </div>
+
+            <div class="form-group col-md-1" style="display: flex; align-items: center;">
+                <input type="text" class="form-control medida" id="medida" style="text-align: right;" name="medida" placeholder="m2" required="required">
+
+            </div>
+            
+        <div class="form-group col-md-1"  style="display: flex; align-items: center;">
+            <input type="number" class="form-control quantidade" id="comodo-quantidade"name="comodo-quantidade" placeholder="Qtd" required="required">
+            <button class="btn btn-danger btn_x" onclick="deleteComodoDiv(this)">X</button>
+        </div>
+    `;
+            comodoAndQuantidadeRows.appendChild(newRow);
+        }
+    </script>
     </form>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const inputElement = document.getElementById('cep');
+
+            inputElement.addEventListener('input', function () {
+                const value = inputElement.value;
+                const maxDigits = 8;
+
+                if (value.length > maxDigits) {
+                    inputElement.value = value.slice(0, maxDigits); // Limita o número de dígitos
+                }
+            });
+        });
+
+        const form = document.getElementById('cad_imovel');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            try {
+                const response = await fetch('http://localhost:8080/imovel', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formObject),
+                });
+
+                if (response.ok) {
+
+                    console.log('Cadastro bem-sucedido');
+                } else {
+                    console.error('Erro ao cadastrar:', response.status);
+                }
+            } catch (error) {
+                console.error(error);
+
+            }
+        });
+
+
+    </script>
 
 </body>
 
 </html>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const inputElement = document.getElementById('cep');
-
-        inputElement.addEventListener('input', function () {
-            const value = inputElement.value;
-            const maxDigits = 8;
-
-            if (value.length > maxDigits) {
-                inputElement.value = value.slice(0, maxDigits); // Limita o número de dígitos
-            }
-        });
-
-        var objetoRecuperado = JSON.parse(localStorage.getItem("identificacao"));
-
-
-        const form = document.querySelector('form')
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            const formData = new FormData()
-            formData.append('tipo_operacao', document.getElementById('tipo_operacao').value);
-            formData.append('id_usuario', objetoRecuperado.id_usuario);
-            formData.append('zona', document.getElementById('zona').value);
-            formData.append('titulo', document.getElementById('titulo').value);
-            formData.append('razao', document.getElementById('razao').value);
-            formData.append('cidade', document.getElementById('cidade').value);
-            formData.append('estado', document.getElementById('estado').value);
-            formData.append('cep', document.getElementById('cep').value);
-            formData.append('especie', document.getElementById('especie').value);
-            formData.append('valor', document.getElementById('valor').value);
-            formData.append('bairro', document.getElementById('bairro').value);
-            formData.append('rua', document.getElementById('rua').value);
-            formData.append('numero', document.getElementById('numero').value);
-            formData.append('complemento', document.getElementById('complemento').value);
-            formData.append('tamanho_terreno', document.getElementById('tamanho_terreno').value);
-            formData.append('tamanho_moradia', document.getElementById('tamanho_moradia').value);
-            formData.append('info_complementares', document.getElementById('info_complementares').value);
-
-            formData.append('imagens', document.getElementById('imagens').files[0]);
-            fetch('http://localhost:8080/imovel', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => {
-                    response.json()
-                })
-                .then(data => {
-                    console.log(data)
-                })
-                .catch(error => {
-                    console.error(error)
-                })
-        })
-    });
-</script>

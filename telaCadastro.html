@@ -25,7 +25,7 @@
             <a class=" ax" href="index.html"><button type="button" class="btn-close x" aria-label="Close"></button>
             </a>
 
-            <h2 style="color: #333333">Cadastro de usuário</h2>
+            <h2 style="color: #333333">Cadastre-se</h2>
 
             <form class="login-form" id="cadastro-form" method="post">
                 <input type="text" name="nome" id="nome" required="required" placeholder="Nome"></input>
@@ -235,6 +235,8 @@ if (v.length === 1) {
                 if (response.ok) {
 
                     console.log('Cadastro bem-sucedido');
+                    alert ('cadastro bem-sucedido');
+                    window.location.href = 'index.html';
                 } else {
                     console.error('Erro ao cadastrar:', response.status);
                 }

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/visuImovel.css">
+
+    <style>
+        .carousel-inner .carousel-item img {
+            object-fit: fill;
+            width: 50%;
+            height: 55%;
+        }
+    </style>
+
+    <title>Imovel Fácil</title>
+</head>
+
+<body>
+    <header class="bg-dark text-light p-4 header">
+    </header>
+    <!-- Barra de Navegação (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-arrow-left"></i> Voltar para tela Inicial </a>
+            <!--tela inicial link aqui-->
+        </div>
+    </nav>
+
+    <form method="GET" id="formVisu">
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+            <div class="col-md-6">
+                <div class="carousel-inner carrosel">
+                    <!-- Adicione as setas de navegação -->
+                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+
+                    <!-- Adicione suas imagens como slides -->
+
+                    <div class="carousel-item active" id="carouselInner">
+
+                    </div>
+
+
+                    <!-- Adicione mais imagens conforme necessário -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrosel fim -->
+        <div class="col-md-5 base-info">
+            <h2 class="display-10" style="font-weight: bold; font-size: xx-large; margin-bottom: 70px;">Informações do
+                Imóvel
+            </h2>
+            <p class="informacoes" style="color:rgb(56, 137, 243)" id="raz"><label class="larger-text">Vendedor:</label>
+                <span id="razao"></span>
+            </p>
+            <p class="informacoes" id="val"><label class="larger-text">Preço:</label> <span id="valor"></span>
+            </p>
+            <p class="informacoes" id="espec"><label class="larger-text">Espécie:</label> <span id="especie"></span></p>
+            <p class="informacoes" id="zon"><label class="larger-text">Localidade:</label> <span id="zona"></span>
+            </p>
+            <button type="button" class="btn btn-success">Entrar em contado com o vendedor</button>
+        </div>
+
+        </div>
+        </div>
+        <div class="col-md-8 detalhes-info">
+            <div class="row mt-4 ">
+                <div class="border-top pt-4  ">
+                    <h3 class="display-4">Detalhes do Imóvel</h3>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-10  info-container-left">
+                            <p class="informacoes" id="est"><label class="larger-text">Estado:</label> <span
+                                    id="estado"></span></p>
+                            <p class="informacoes" id="bairr"><label class="larger-text">Bairro:</label> <span
+                                    id="bairro"></span></p>
+                            <p class="informacoes" id="cid"><label class="larger-text">Cidade:</label> <span
+                                    id="cidade"></span></p>
+                            <p class="informacoes" id="num"><label class="larger-text">Número:</label> <span
+                                    id="numero"></span></p>
+                            <div class=" col-md-10 info-container-right ">
+                                <p class="informacoes" id="comp"><label class="larger-text">Complemento:</label> <span
+                                        id="complemento"></span>
+                                <p class="informacoes" id="tam_terr"><label class="larger-text">Tamanho do Terreno
+                                        (m²):</label> <span id="tamanho_terreno"></span>
+                                <p class="informacoes" id="tam_mor"><label class="larger-text">Tamanho da moradia
+                                        (m²):</label> <span id="tamanho_moradia"></span>
+                            </div>
+                            <div class="complementares">
+                                <p class="informacoes" id="inf_comp"><label class="larger-text">Informações
+                                        Complementares:</label>
+                                    <br>
+                                    <span id="info_complementares"></span>
+                                    <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Sobre nós</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3">Imóvel Fácil</i>
+                        </h6>
+                        <p style="text-align: justify;" s>
+                            Criado para facilitar a sua vida, a Imóvel Fácil não necessita de imobiliárias, corretores
+                            ou uma super-papelada para que você possa vender seu imóvel, com a gente tudo fica mais
+                            fácil, confortável e econômico!
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Criadores
+                        </h6>
+                        <p>
+                            <a href="#" class="text-reset">Cauã Sehn Essing</a>
+                        </p>
+                        <p>
+                            <a href="https://www.instagram.com/cleinam_r/" class="text-reset">Cleinam Rachelle</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Hindia Polliany Alves de Sousa Leite</a>
+                        </p>
+                        <p>
+                            <a href="https://www.instagram.com/thigas_bm/" class="text-reset">Thiago Biazus Maran</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contato</h6>
+                        <p>
+                            <i class="fas fa-envelope me-3">imovelfacilcontato@gmail.com</i>
+
+                        </p>
+                        <p><i class="fas fa-phone me-3">(49) 991935166</i></p>
+                        <p><i class="fas fa-print me-3">(49) 991335649</i></p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 Copyright:
+            <a class="text-reset fw-bold" href="...">ImovelFacil.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Pega o ID do imóvel da URL (supondo que esteja na query string)
+            const urlParams = new URLSearchParams(window.location.search);
+            const idImovel = urlParams.get('id_imovel');
+
+            fetch(`http://localhost:8080/imovel/${idImovel}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Preenche os campos do formulário com os dados obtidos da API
+                    document.getElementById('razao').textContent = data.razao;
+                    document.getElementById('valor').textContent = `R$ ${data.valor}`;
+                    document.getElementById('especie').textContent = data.especie;
+                    document.getElementById('zona').textContent = data.zona;
+                    document.getElementById('estado').textContent = data.estado;
+                    document.getElementById('bairro').textContent = data.bairro;
+                    document.getElementById('cidade').textContent = data.cidade;
+                    document.getElementById('numero').textContent = data.numero;
+                    document.getElementById('complemento').textContent = data.complemento;
+                    document.getElementById('tamanho_terreno').textContent = data.tamanho_terreno;
+                    document.getElementById('tamanho_moradia').textContent = data.tamanho_moradia;
+                    document.getElementById('info_complementares').textContent = data.info_complementares;
+
+                    const carouselInner = document.getElementById('carouselInner');
+
+                    if (typeof data.imagens === 'string') {
+                        const carouselItem = document.createElement('div');
+                        carouselItem.classList.add('carousel-item', 'active');
+
+                        const img = document.createElement('img');
+                        console.log('Caminho da imagem:', data.imagens);
+                        img.src = `uploads/${data.imagens}`;
+                        img.classList.add('d-block', 'w-100');
+                        img.alt = `Imagem`;
+
+                        carouselItem.appendChild(img);
+                        carouselInner.appendChild(carouselItem);
+                    } else if (Array.isArray(data.imagens)) {
+                        data.imagens.forEach((imagem, index) => {
+                            const carouselItem = document.createElement('div');
+                            carouselItem.classList.add('carousel-item');
+                            if (index === 0) {
+                                carouselItem.classList.add('active');
+                            }
+
+                            const img = document.createElement('img');
+                            img.src = `uploads/${imagem}`; // Supondo que o caminho da imagem está no campo "imagem" dos dados
+                            img.classList.add('d-block', 'w-100');
+                            img.alt = `Imagem ${index + 1}`;
+
+                            carouselItem.appendChild(img);
+                            carouselInner.appendChild(carouselItem);
+                        });
+                    } else {
+                        // Trate outros tipos de dados para o campo imagens, se necessário
+                        console.error('Formato inválido para imagens:', data.imagens);
+                    }
+
+                    const idCidade = data.cidade;
+
+                    fetch(`http://localhost:8080/cidades/${idCidade}`)
+                        .then(response => {
+                            console.log(response);
+                            return response.json();
+                        })
+
+                        .then(cidadeData => {
+                            const nomeCidade = cidadeData.nome;
+
+                            document.getElementById('cidade').textContent = nomeCidade;
+                        })
+                        .catch(error => console.error('Erro ao obter dados da cidade:', error));
+                })
+                .catch(error => console.error('Erro ao obter dados do imóvel:', error));
+        });
+    </script>
+
+</body>
+
+</html>
